@@ -18,6 +18,9 @@ spring:
   application:
     name: HOTEL-SERVICE
 
+  config:
+    import: configserver:http://localhost:6065
+
 eureka:
   instance:
     prefer-ip-address: true
