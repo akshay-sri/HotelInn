@@ -9,14 +9,14 @@ spring:
     config:
       server:
         git:
-          uri: 
-
+          uri: https://github.com/akshay-sri/HotelInn
+          clone-on-start: true
 
 eureka:
   instance:
-    hostname: localhost
+    prefer-ip-address: true
   client:
-    register-with-eureka: false
-    fetch-registry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:6063/eureka/
