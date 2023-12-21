@@ -29,6 +29,7 @@ spring:
 #    register-with-eureka: true
 #    service-url:
 #      defaultZone: http://localhost:6063/eureka/
+
 # circuit breaker configuration
 management:
   health:
@@ -56,7 +57,7 @@ resilience4j:
         permittedNumberOfCallsInHalfOpenState: 2
         slidingWindowSize: 10
         slidingWindowType: COUNT_BASED
-
+# retry configuration
   retry:
     instances:
       ratingHotelService:
