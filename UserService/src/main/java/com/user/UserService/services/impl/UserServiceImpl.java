@@ -23,12 +23,12 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Override
-    public User createUser(User user) {
-        String randomUserId = UUID.randomUUID().toString();
-        user.setUserId(randomUserId);
-        return userRepo.save(user);
-    }
+//    @Override
+//    public User createUser(User user) {
+//        String randomUserId = UUID.randomUUID().toString();
+//        user.setUserId(randomUserId);
+//        return userRepo.save(user);
+//    }
 
     @Override
     public List<User> getUsers() {
@@ -62,7 +62,7 @@ public class UserServiceImpl implements UserService {
     public User updateUser(User user, String userId) {
         User user1 = userRepo.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User", " id ", userId));
-        user1.setUserName(user.getUserName());
+        user1.setName(user.getName());
         user1.setAbout(user.getAbout());
         user1.setEmail(user.getEmail());
         userRepo.save(user1);

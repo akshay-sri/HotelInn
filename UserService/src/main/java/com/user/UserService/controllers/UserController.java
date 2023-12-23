@@ -21,11 +21,11 @@ public class UserController {
     private UserService userService;
     private Logger logger = LoggerFactory.getLogger(UserController.class);
 
-    @PostMapping("/create")
-    public ResponseEntity<User> createUser(@RequestBody User user) {
-        User user1 = userService.createUser(user);
-        return ResponseEntity.status(HttpStatus.CREATED).body(user1);
-    }
+//    @PostMapping("/create")
+//    public ResponseEntity<User> createUser(@RequestBody User user) {
+//        User user1 = userService.createUser(user);
+//        return ResponseEntity.status(HttpStatus.CREATED).body(user1);
+//    }
     int retryCount=1;
 
     @GetMapping("/{userId}")
@@ -41,7 +41,7 @@ public class UserController {
     public ResponseEntity<User> ratingHotelFallback(String userId,Exception e){
         logger.info("Fallback is executed because service is down",e.getMessage());
         User user=User.builder()
-                .userName("Dummy")
+                .name("Dummy")
                 .email("dummy@gmail.com")
                 .about("The user is created dummy because some services are down")
                 .userId("141234")
