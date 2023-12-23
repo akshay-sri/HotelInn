@@ -23,13 +23,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private RestTemplate restTemplate;
 
-//    @Override
-//    public User createUser(User user) {
-//        String randomUserId = UUID.randomUUID().toString();
-//        user.setUserId(randomUserId);
-//        return userRepo.save(user);
-//    }
-
     @Override
     public List<User> getUsers() {
         return userRepo.findAll();

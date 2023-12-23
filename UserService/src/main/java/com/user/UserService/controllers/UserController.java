@@ -20,12 +20,6 @@ public class UserController {
     @Autowired
     private UserService userService;
     private Logger logger = LoggerFactory.getLogger(UserController.class);
-
-//    @PostMapping("/create")
-//    public ResponseEntity<User> createUser(@RequestBody User user) {
-//        User user1 = userService.createUser(user);
-//        return ResponseEntity.status(HttpStatus.CREATED).body(user1);
-//    }
     int retryCount=1;
 
     @GetMapping("/{userId}")
